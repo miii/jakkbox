@@ -1,6 +1,6 @@
 # jakkbox
 
-> Drinking game
+> Mission-based drinking game developed with Vue.js
 
 ## Build Setup
 
