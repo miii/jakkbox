@@ -81,4 +81,12 @@ export default {
   display: flex;
   cursor: move;
 }
+
+@media screen and (max-width: 1400px) {
+
+  .flex {
+    padding: 10px 5px;
+  }
+
+}
 </style>

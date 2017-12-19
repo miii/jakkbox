@@ -76,7 +76,6 @@ export default {
 <style type="scss">
 .Mission {
   width: 100%;
-  margin: 0 5px;
   font-size: 15px;
   margin: 0 10px;
 }
@@ -92,5 +91,13 @@ export default {
 .Mission ul {
   margin: 0;
   padding: 0;
+}
+
+@media screen and (max-width: 1400px) {
+
+  .Mission {
+    margin: 0 5px;
+  }
+
 }
 </style>

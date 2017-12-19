@@ -1,5 +1,5 @@
 <template>
-  <li>
+  <li class="item">
     <md-icon class="selected">forward</md-icon>
     {{ name }}
     <md-icon class="remove" @click.native="remove">remove_circle</md-icon>
@@ -125,5 +125,28 @@ li {
 .highlight .md-icon {
   opacity: 1;
   color:inherit;
+}
+
+@media screen and (max-width: 1400px) {
+
+  .item {
+    font-size: 13px !important;
+  }
+
+  .md-icon.remove {
+    right: 5px !important;
+    font-size: 13px;
+  }
+
+  .md-icon.selected {
+    left: 5px;
+    font-size: 13px;
+  }
+
+  .highlight {
+    margin-left: -5px;
+    width: calc(100% + 10px);
+  }
+
 }
 </style>
