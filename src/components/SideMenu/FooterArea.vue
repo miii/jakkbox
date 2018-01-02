@@ -17,7 +17,7 @@
     <span class="info">
       Inspirerat av <a target="_blank" href="http://dödskrök.se">Stabens Dödskrök</a><br>
       Utvecklat med ♥ av Jacob Andersson<br>
-      Version {{ appVersion }} - <!--<a target="_blank" href="">Changelog</a>-->
+      Version {{ appVersion }} - <a target="_blank" href="https://github.com/miii/jakkbox/blob/master/CHANGELOG.md">Changelog</a>
     </span>
 
     <md-dialog-prompt
