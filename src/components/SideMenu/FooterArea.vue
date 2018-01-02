@@ -203,6 +203,7 @@ export default {
 .md-avatar.md-large .md-icon {
   color: #FFF;
   font-size: 30px !important;
+  display: inline-block;
 }
 
 a:link,
