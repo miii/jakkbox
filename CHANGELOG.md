@@ -7,7 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [[1.0.0](https://github.com/miii/jakkbox/tree/v1.0.0)] - 2018-01-03
 ### Added
 - User is able to restore last game state from local storage
-- Changelog
+- Changelog added
+- Google Analytics added
 
 ### Changed
 - CSS responsiveness on smaller resolutions improved
