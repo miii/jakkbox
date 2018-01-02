@@ -30,7 +30,7 @@ export default {
 
 <style type="scss" scoped>
 #sideMenu {
-  width: 300px;
+  width: 250px;
   height: 100vh;
   background: #222;
   flex-grow: 0;
@@ -38,5 +38,13 @@ export default {
   display: flex;
   flex-direction: column;
   z-index: 100;
+}
+
+@media screen and (max-width: 1200px) {
+
+  #sideMenu {
+    width: 200px;
+  }
+
 }
 </style>

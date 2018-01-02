@@ -121,4 +121,24 @@ export default {
   animation: none;
   opacity: 0.4;
 }
+
+@media screen and (max-width: 1200px) {
+
+  #gameCounter {
+    margin-bottom: 30px;
+  }
+
+  .md-large {
+    min-width: 0;
+    min-height: 0;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 20px;
+  }
+
+  .md-avatar.md-large .md-icon {
+    font-size: 30px !important;
+  }
+}
 </style>

@@ -14,8 +14,8 @@ export default {
     // Default values
     return {
       canvas: null, // canvas element
-      active: false, // If cooldown is active
-      paused: false, // If game is paused
+      active: true, // If cooldown is active
+      paused: true, // If game is paused
       startTime: null, // Stores start time of the cooldown
 
       // Cooldown intervals for animation
@@ -88,18 +88,25 @@ export default {
 
       const c = this.canvas;
       const ctx = c.getContext('2d');
-      const size = 106;
+      let size = 90;
+
+      let offsetBottom = 125;
+
+      if (window.innerWidth <= 1200) {
+        offsetBottom = 132;
+        size = 94;
+      }
 
       // Draw fastest arc
       ctx.beginPath();
-      ctx.arc(125, 125, size, 0, ((p1 / 50) * Math.PI));
+      ctx.arc(offsetBottom, 125, size, 0, ((p1 / 50) * Math.PI));
       ctx.lineTo(c.width / 2, c.height / 2);
       ctx.fillStyle = 'rgba(230,242,250,0.4)'; // Blueish white, with transparency
       ctx.fill();
 
       // Draw slowest arc (in front of fastest arc)
       ctx.beginPath();
-      ctx.arc(125, 125, size, 0, ((p2 / 50) * Math.PI));
+      ctx.arc(offsetBottom, 125, size, 0, ((p2 / 50) * Math.PI));
       ctx.lineTo(c.width / 2, c.height / 2);
       ctx.fillStyle = '#e6f2fa'; // Blueish white
       ctx.fill();
@@ -114,7 +121,7 @@ export default {
   height: 250px;
   margin-bottom: 32px;
   position: absolute;
-  width: 300px;
+  width: 250px;
   top: 5px;
 }
 
@@ -122,5 +129,13 @@ canvas {
   margin: auto;
   transform: rotateZ(-90deg);
   z-index: -1;
+}
+
+@media screen and (max-width: 1200px) {
+
+  #Cooldown {
+    width: 200px;
+  }
+
 }
 </style>

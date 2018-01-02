@@ -17,7 +17,7 @@
     <span class="info">
       Inspirerat av <a target="_blank" href="http://dödskrök.se">Stabens Dödskrök</a><br>
       Utvecklat med ♥ av Jacob Andersson<br>
-      Version {{ appVersion }}
+      Version {{ appVersion }} - <!--<a target="_blank" href="">Changelog</a>-->
     </span>
 
     <md-dialog-prompt
@@ -184,7 +184,7 @@ export default {
 .icons {
   transform: translateY(-33px);
   position: absolute;
-  width: 300px;
+  width: 250px;
 }
 
 .md-avatar {
@@ -193,20 +193,16 @@ export default {
   cursor: pointer;
 }
 
-.md-avatar:hover {
-  background: #6fb7db;
-}
-
-.md-icon {
-  font-size: 30px !important;
-  display: block;
-}
-
 .info {
   margin-top: 48px;
   display: block;
   font-size: 11px;
   line-height: 15px;
+}
+
+.md-avatar.md-large .md-icon {
+  color: #FFF;
+  font-size: 30px !important;
 }
 
 a:link,
@@ -217,5 +213,44 @@ a:visited {
 a:hover {
   color: #59abd5 !important;
   text-decoration: none !important;
+}
+
+.changelog {
+  padding: 10px;
+  background: #F8F8F8;
+  border: 1px solid #E8E8E8;
+  margin: 15px 0;
+  font-family: monospace;
+  font-size: 12px;
+}
+
+pre {
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 1200px) {
+
+  .icons {
+    width: 200px;
+  }
+
+  .md-large {
+    min-width: 0;
+    min-height: 0;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 20px;
+  }
+
+  .md-avatar.md-large .md-icon {
+    font-size: 25px !important;
+  }
+  
+  .info {
+    font-size: 9px;
+    line-height: 12px;
+  }
 }
 </style>

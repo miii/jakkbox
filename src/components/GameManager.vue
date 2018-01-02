@@ -1,4 +1,5 @@
-<template></template>
+<template>
+</template>
 
 <script>
 import EventBus from './../EventBus';
@@ -25,12 +26,18 @@ export default {
   },
   mounted() {
     // Update other components with the specified interval values
-    EventBus.$emit('changeMinInterval', this.minInterval);
-    EventBus.$emit('changeMaxInterval', this.maxInterval);
+    EventBus.$emit('changeMinInterval', this.$localStorage.get('minInterval', this.minInterval));
+    EventBus.$emit('changeMaxInterval', this.$localStorage.get('maxInterval', this.maxInterval));
 
     // Detect interval changes from other components and randomize new cooldown time
-    EventBus.$on('changeMinInterval', (val) => { this.minInterval = val; this.setRandomCooldown(); });
-    EventBus.$on('changeMaxInterval', (val) => { this.maxInterval = val; this.setRandomCooldown(); });
+    EventBus.$on('changeMinInterval', (val) => {
+      this.minInterval = val; this.setRandomCooldown();
+      this.$localStorage.set('minInterval', this.minInterval);
+    });
+    EventBus.$on('changeMaxInterval', (val) => {
+      this.maxInterval = val; this.setRandomCooldown();
+      this.$localStorage.set('maxInterval', this.maxInterval);
+    });
 
     // Detect play events from other components
     EventBus.$on('play', (playing) => {

@@ -67,7 +67,7 @@ li {
   margin-top: 0 !important;
   background: #222;
   transform: scale(1, 1);
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .md-icon {
@@ -78,8 +78,8 @@ li {
 }
 
 .md-icon.remove {
-  right: 16px;
-  font-size: 20px;
+  right: 7px;
+  font-size: 15px !important;
 }
 
 .md-icon.remove:hover {
@@ -95,11 +95,7 @@ li {
 
 .remove {
   color: #FFF;
-  opacity: 0.1;
-}
-
-.title .remove {
-  opacity: 1;
+  opacity: 0.4;
 }
 
 .highlight {
@@ -127,14 +123,22 @@ li {
   color:inherit;
 }
 
+.remove {
+  display: none;
+}
+
+.item:hover .remove {
+  display: block;
+}
+
 @media screen and (max-width: 1400px) {
 
   .item {
-    font-size: 13px !important;
+    font-size: 11px !important;
   }
 
   .md-icon.remove {
-    right: 5px !important;
+    right: 3px !important;
     font-size: 13px;
   }
 
@@ -146,6 +150,20 @@ li {
   .highlight {
     margin-left: -5px;
     width: calc(100% + 10px);
+  }
+
+}
+
+@media screen and (max-width: 1200px) {
+
+  .item {
+    font-size: 11px !important;
+    height: 50px;
+  }
+
+  .md-icon.remove {
+    font-size: 11px !important;
+    right: 2px !important;
   }
 
 }

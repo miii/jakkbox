@@ -54,7 +54,7 @@ export default {
 }
 
 .logo {
-  padding: 30px 50px;
+  padding: 45px 40px;
   z-index: 1000;
 }
 
@@ -65,5 +65,13 @@ img {
 
 .logo.active img {
   animation: rotate 5.15s 4 linear;
+}
+
+@media screen and (max-width: 1200px) {
+
+  .logo {
+    padding: 30px 30px;
+  }
+
 }
 </style>
