@@ -35,12 +35,12 @@ export default {
     EventBus.$on('changeMinInterval', (val) => {
       this.minInterval = val; this.setRandomCooldown();
       this.$localStorage.set('minInterval', this.minInterval);
-      this.$ga.event('min-interval', 'changed', `v${version}`, val); // Log event on GA
+      this.$ga.event('min-interval', 'changed', val); // Log event on GA
     });
     EventBus.$on('changeMaxInterval', (val) => {
       this.maxInterval = val; this.setRandomCooldown();
       this.$localStorage.set('maxInterval', this.maxInterval);
-      this.$ga.event('max-interval', 'changed', `v${version}`, val); // Log event on GA
+      this.$ga.event('max-interval', 'changed', val); // Log event on GA
     });
 
     // Detect play events from other components

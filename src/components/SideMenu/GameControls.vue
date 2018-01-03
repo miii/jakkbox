@@ -66,7 +66,7 @@ export default {
       this.playLocked = false; // Unlock play button if locked
       if (isRunning) {
         this.rounds += 1; // Increase counter
-        this.$ga.event('round', 'new', `v${version}`, this.rounds); // Log event on GA
+        this.$ga.event('round', 'new', this.rounds); // Log event on GA
       }
     });
   },
