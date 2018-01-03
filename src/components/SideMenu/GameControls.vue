@@ -24,8 +24,6 @@
 // Use event bus to send and receive custom events
 import EventBus from '../../EventBus';
 
-import { version } from './../../../package.json';
-
 export default {
   name: 'GameCounter',
   data() {

@@ -4,8 +4,6 @@
 <script>
 import EventBus from './../EventBus';
 
-import { version } from './../../package.json';
-
 // Component specified for game logic
 export default {
   name: 'GameManager',

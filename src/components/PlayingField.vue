@@ -33,8 +33,6 @@ import EventBus from '../EventBus';
 import Mission from '../components/PlayingField/Mission';
 import Music from '../components/PlayingField/Music';
 
-import { version } from './../../package.json';
-
 // Component for showing the playing field
 export default {
   name: 'PlayingField',
@@ -107,10 +105,10 @@ export default {
           this.players = players;
       }
 
-      missions.forEach((mission) => {
+      this.missions.forEach((mission) => {
         this.$ga.event('mission', 'add', mission); // Log event on GA
       });
-      players.forEach((player) => {
+      this.players.forEach((player) => {
         this.$ga.event('player', 'add', player); // Log event on GA
       });
     },
