@@ -33,6 +33,8 @@ import EventBus from '../EventBus';
 import Mission from '../components/PlayingField/Mission';
 import Music from '../components/PlayingField/Music';
 
+import { version } from './../../package.json';
+
 // Component for showing the playing field
 export default {
   name: 'PlayingField',
@@ -69,17 +71,20 @@ export default {
     EventBus.$on('add_player', (name) => {
       this.players.push(name);
       this.$localStorage.set('players', JSON.stringify(this.players));
+      this.$ga.event('player', 'add', `v${version}`, name); // Log event on GA
     });
     EventBus.$on('remove_player', (index) => {
+      this.$ga.event('player', 'remove', `v${version}`, this.players[index]); // Log event on GA
       this.players.splice(index, 1);
       this.$localStorage.set('players', JSON.stringify(this.players));
     });
-
     EventBus.$on('add_mission', (name) => {
       this.missions.push(name);
       this.$localStorage.set('missions', JSON.stringify(this.missions));
+      this.$ga.event('mission', 'add', `v${version}`, name); // Log event on GA
     });
     EventBus.$on('remove_mission', (index) => {
+      this.$ga.event('mission', 'remove', `v${version}`, this.missions[index]); // Log event on GA
       this.missions.splice(index, 1);
       this.$localStorage.set('missions', JSON.stringify(this.missions));
     });
@@ -92,8 +97,22 @@ export default {
   methods: {
     onPreviousGameDialogClose(type) {
       if (type === 'ok') {
-        this.missions = JSON.parse(this.$localStorage.get('missions'));
-        this.players = JSON.parse(this.$localStorage.get('players'));
+        const missions = JSON.parse(this.$localStorage.get('missions'));
+        const players = JSON.parse(this.$localStorage.get('players'));
+
+        if (Array.isArray(missions)) {
+          this.missions = missions;
+          missions.forEach((mission) => {
+            this.$ga.event('mission', 'add', `v${version}`, mission); // Log event on GA
+          });
+        }
+
+        if (Array.isArray(players)) {
+          this.players = players;
+          players.forEach((player) => {
+            this.$ga.event('player', 'add', `v${version}`, player); // Log event on GA
+          });
+        }
       }
     },
   },

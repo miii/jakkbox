@@ -24,6 +24,8 @@
 // Use event bus to send and receive custom events
 import EventBus from '../../EventBus';
 
+import { version } from './../../../package.json';
+
 export default {
   name: 'GameCounter',
   data() {
@@ -62,8 +64,10 @@ export default {
     EventBus.$on('run', (isRunning) => {
       this.running = isRunning;
       this.playLocked = false; // Unlock play button if locked
-      if (isRunning)
+      if (isRunning) {
         this.rounds += 1; // Increase counter
+        this.$ga.event('round', 'new', `v${version}`, this.rounds); // Log event on GA
+      }
     });
   },
   methods: {

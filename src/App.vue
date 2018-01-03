@@ -18,6 +18,9 @@ export default {
     PlayingField,
     GameManager,
   },
+  mounted() {
+    this.$ga.page('/');
+  },
 };
 </script>
 
